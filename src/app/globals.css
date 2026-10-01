@@ -92,3 +92,21 @@ body {
     animation: none;
   }
 }
+
+/* Failsafe for Framer Motion load animations: Framer renders them at opacity 0 in the server
+   HTML. If JavaScript is slow or fails, this forces them visible after a short delay (Framer has
+   normally finished by then, so it changes nothing when everything works). */
+.reveal-failsafe {
+  animation: reveal-failsafe 0s linear 2.5s forwards;
+}
+
+.reveal-failsafe-late {
+  animation: reveal-failsafe 0s linear 5s forwards;
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

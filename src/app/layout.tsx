@@ -30,6 +30,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
+      <head>
+        <noscript>
+          <style>{`.reveal-failsafe,.reveal-failsafe-late{opacity:1!important;transform:none!important;animation:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         <Providers>
           <SiteHeader />

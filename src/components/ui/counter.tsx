@@ -27,7 +27,8 @@ export function Counter({ value, suffix = "", duration = 1.6 }: { value: number;
 
   return (
     <span ref={ref} className="tabular-nums" aria-label={`${value}${suffix}`}>
-      0{suffix}
+      {value}
+      {suffix}
     </span>
   );
 }

@@ -23,7 +23,7 @@ export const FlipWords = ({
   }, [index, duration, words.length]);
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       <motion.span
         key={currentWord}
         initial={{ opacity: 0, y: 10 }}
