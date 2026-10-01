@@ -64,4 +64,4 @@ Add these to `.env.local`. This file is gitignored and must never be committed.
 
 ---
 
-Built by **DAYTOZN**.
+Built by **DWIGHT**.
