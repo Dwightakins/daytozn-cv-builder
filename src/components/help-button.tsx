@@ -2,20 +2,15 @@
 
 import { motion } from "framer-motion";
 
-// Set NEXT_PUBLIC_WHATSAPP_NUMBER (international format, digits only, e.g. 2348012345678)
-// to open a WhatsApp chat. Without it, the button points to the "How it works" section.
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
-const HELP_MESSAGE = "Hi DAYTOZN, I need help with the CV builder.";
+const WHATSAPP_URL = "https://wa.me/2347016309967";
 
 export function HelpButton() {
-  const href = WHATSAPP_NUMBER
-    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HELP_MESSAGE)}`
-    : "/#how-it-works";
-
   return (
     <motion.a
-      href={href}
-      {...(WHATSAPP_NUMBER ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Need help? Chat with us on WhatsApp"
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
